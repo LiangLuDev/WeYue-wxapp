@@ -1,0 +1,44 @@
+page, .page, .page__bd {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  padding-top: 50px;
+  background-color: white;
+}
+
+.book__content {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.book__image {
+  width: 65px;
+  height: 87px;
+  margin-left: 10px;
+}
+
+.book__text__title{
+  font-size: 14px;
+}
+
+.book__text__author{
+   font-size: 12px;
+}
+
+.loadmore{
+  background-color: #f0f0f0;
+  width: 100%;
+  height:40px;
+  text-align: center
+}

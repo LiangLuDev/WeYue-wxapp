@@ -1,0 +1,8 @@
+<view>
+
+
+    <view class="view-top">
+    </view>
+    <image class='img_avatar' src='{{avatar}}'></image>
+    <text class="text_username" >未登录</text>
+</view>

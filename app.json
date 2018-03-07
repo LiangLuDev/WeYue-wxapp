@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/shelf/shelf",
+    "pages/books/books",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00BCD4",
+    "navigationBarTitleText": "微Yue电子书",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#00BCD4",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/ic_classify.png",
+        "selectedIconPath": "image/ic_classify_HL.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shelf/shelf",
+        "iconPath": "image/ic_shelf.png",
+        "selectedIconPath": "image/ic_shelf_HL.png",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "image/ic_mine.png",
+        "selectedIconPath": "image/ic_mine_HL.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

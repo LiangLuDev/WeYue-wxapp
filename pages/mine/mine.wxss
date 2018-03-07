@@ -1,0 +1,19 @@
+.view-top{
+    background: #00BCD4;
+    width: inherit;
+    height: 100px;
+}
+
+
+.img_avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin-top: -60rpx;
+    margin-left: 40rpx;
+    border-radius: 50%;
+
+}
+.text_username{
+    margin-top:10rpx;
+    margin-left: 20rpx;
+}
