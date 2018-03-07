@@ -13,7 +13,8 @@
     border-radius: 50%;
 
 }
-.text_username{
-    margin-top:10rpx;
-    margin-left: 20rpx;
-}
+/*.text_username{*/
+    /*size: 10rpx;*/
+    /*margin-top:10rpx;*/
+    /*margin-left: 20rpx;*/
+/*}*/
