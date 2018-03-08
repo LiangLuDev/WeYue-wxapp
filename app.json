@@ -4,7 +4,8 @@
     "pages/mine/mine",
     "pages/shelf/shelf",
     "pages/books/books",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",

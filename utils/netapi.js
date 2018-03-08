@@ -33,4 +33,38 @@ function Get(url, data, success, fail) {
     })
 }
 
+
+/**
+ * 请求封装-Post
+ * @param url 请求地址
+ * @param data 请求参数（无参数不用写）
+ * @param success 成功回调
+ * @param fail  失败回调
+ * @constructor
+ */
+function Post(url, data, success, fail) {
+    if (!fail) {
+        fail = success;
+        success = data;
+        data = "";
+    }
+
+    wx.request({
+        url: BASE_URL + url,
+        header: {
+            'access-token': app.globalData.access_token,
+            'app-type': 'wx-app'
+        },
+        method: 'POST',
+        data: data,
+        success: function (res) {
+            success(res)
+        },
+        fail: function (res) {
+            fail(res)
+        }
+    })
+}
+
 exports.Get = Get;
+exports.Post = Post;

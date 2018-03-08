@@ -1,3 +1,4 @@
+
 .view-top{
     background: #00BCD4;
     width: inherit;
@@ -11,10 +12,12 @@
     margin-top: -60rpx;
     margin-left: 40rpx;
     border-radius: 50%;
+    display: flex;
 
 }
-/*.text_username{*/
-    /*size: 10rpx;*/
-    /*margin-top:10rpx;*/
-    /*margin-left: 20rpx;*/
-/*}*/
+.text_username{
+    font-size: 35rpx;
+    margin-top:30rpx;
+    margin-left: 45rpx;
+    justify-content: center;
+}

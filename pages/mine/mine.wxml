@@ -1,8 +1,9 @@
-<view>
+<view class="page">
 
 
     <view class="view-top">
     </view>
-    <image class='img_avatar' src='{{avatar}}'></image>
-    <text class="text_username" >未登录</text>
+    <image class='img_avatar' src='{{avatar}}' bindtap="bindTapUseravatar"></image>
+    <text class="text_username">{{username}}</text>
+
 </view>
