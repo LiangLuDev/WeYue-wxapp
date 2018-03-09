@@ -1,6 +1,6 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 var contant = require('../constant.js');
-var netapi = require('../../utils/netapi');
+var dev_request = require('../../utils/dev_request');
 Page({
     data: {
         tabs: ["男生", "女生", "出版"],
@@ -21,9 +21,9 @@ Page({
             }
         });
 
-        netapi.Get('/classify', function (res) {
+        dev_request.Get('/classify', function (res) {
             that.setData({
-                classifys: res.data.data
+                classifys: res.data
             })
         });
     },

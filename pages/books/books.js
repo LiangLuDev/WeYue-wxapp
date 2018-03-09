@@ -1,6 +1,6 @@
 let sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 let contant = require('../constant.js');
-let netapi = require('../../utils/netapi');
+let dev_request = require('../../utils/dev_request');
 let mMajor = ''
 let mPage = 1
 let mType = 'hot';
@@ -76,15 +76,15 @@ Page({
             page: page
 
         };
-        netapi.Get('/books', data, function (res) {
+        dev_request.Get('/books', data, function (res) {
             console.log('success', res);
             let loadStatus = '数据加载完毕';
             let isLoadMore = false;
 
             console.log(book.data);
             if (page > 1) {
-                if (book.data.data.length > 0) {
-                    bookInfo.push(book.data.data)
+                if (book.data.length > 0) {
+                    bookInfo.push(book.data)
                     console.log(bookInfo)
                 } else {
                     loadStatus = '暂无更多书籍数据'
@@ -92,7 +92,7 @@ Page({
 
             } else {
                 bookInfo = []
-                bookInfo = book.data.data
+                bookInfo = book.data
             }
 
             that.setData({

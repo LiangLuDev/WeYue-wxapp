@@ -1,6 +1,6 @@
 // pages/login/login.js
 
-let netapi = require('../../utils/netapi');
+let dev_request = require('../../utils/dev_request');
 const app = getApp()
 
 Page({
@@ -16,7 +16,6 @@ Page({
     onLoad: function (options) {
 
     },
-
     //登录提交按钮
     formLogin: function (e) {
         console.log(e);
@@ -28,12 +27,28 @@ Page({
                 icon: 'none',
                 duration: 1000
             })
-        }else {
-            let data={name:username,password:password}
-            netapi.Get('/user/login',data,function (res) {
-                console.log('login',res);
-            },function (err) {
-                console.log(err);
+        } else {
+            let data = {
+                name: username,
+                password: password
+            }
+            dev_request.Get('/user/login', data, function (res) {
+                wx.setStorage({
+                    key:'userinfo',
+                    data:res.data,
+                    success:function () {
+                        wx.showToast({
+                            title: '登录成功',
+                            icon: 'success',
+                            duration: 1000
+                        })
+                    }
+                })
+
+                setTimeout(wx.redirectTo({
+                    url: '/mine/mine',
+                }), 1000)
+
             })
         }
     }

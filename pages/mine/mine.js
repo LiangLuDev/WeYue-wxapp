@@ -18,6 +18,14 @@ Page({
 
     },
 
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+
+    },
+
     bindTapUseravatar:function () {
         if (this.data.username === '未登录') {
             wx.navigateTo({
