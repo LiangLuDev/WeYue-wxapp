@@ -1,12 +1,16 @@
 <view>
     <form bindsubmit="formLogin">
         <text class="text-username">用户名</text>
-        <input name="username" class="input-username" placeholder="输入用户名" type="number" maxlength="20" />
+        <input name="username" class="input-username" placeholder="输入用户名" type="number" maxlength="20"/>
 
         <text class="text-username">密码</text>
-        <input name="password" class="input-username" placeholder="输入密码" type="password" confirm-type="next" maxlength="20"/>
+        <input name="password" class="input-username" placeholder="输入密码" type="password" confirm-type="next"
+               maxlength="20"/>
 
-        <button class="button-confirm" formType="submit" >登录</button>
+        <button class="button-confirm" formType="submit">登录</button>
+
+
     </form>
 
+    <button class="button-confirm" bindtap="bindtapRegister">注册</button>
 </view>

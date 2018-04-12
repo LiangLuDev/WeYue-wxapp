@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.5.87:3389';
+const BASE_URL = 'http://192.168.1.223:3389/api';
 const app = getApp();
 
 /**
@@ -25,17 +25,20 @@ function request(url, method, data, success, fail) {
             console.log("传递参数类型不正确");
         }
 
+    } else {
+        console.log("传递参数个数不正确");
     }
 
     let wxtask = wx.request({
-        url: BASE_URL +'/api'+ url,
+        url: BASE_URL + url,
         header: {
-            'access-token': wx.getStorageSync('userinfo').token,
+            'access-token': wx.getStorageSync('userinfo').access_token?"access-token":wx.getStorageSync('userinfo').access_token,
             'app-type': 'wx-app'
         },
         method: method,
         data: data,
         success: function (res) {
+            console.log(res.data.code);
             switch (res.data.code) {
                 case 10000:
                 case 10001:
@@ -67,12 +70,11 @@ function request(url, method, data, success, fail) {
                         icon: 'none',
                         duration: 1000
                     })
-                    setTimeout(function () {
-                        //token无效跳转登录页面
-                        wx.navigateTo({
-                            url: "../login/login"
-                        })
-                    },1000)
+                    //token无效跳转登录页面
+                    setTimeout(wx.navigateTo({
+                        url: "../login/login"
+                    }), 1000)
+
                     break
             }
         },
@@ -141,4 +143,4 @@ function Delete(url, data, success, fail) {
 exports.Get = Get;
 exports.Post = Post;
 exports.Delete = Delete;
-exports.BaseUrl = BASE_URL;
+exports.BASE_URL = BASE_URL;

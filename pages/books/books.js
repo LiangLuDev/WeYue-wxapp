@@ -1,5 +1,4 @@
 let sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-let contant = require('../constant.js');
 let dev_request = require('../../utils/dev_request');
 let mMajor = ''
 let mPage = 1
@@ -16,7 +15,7 @@ Page({
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
-        base_url: contant.base_url,
+        base_url: dev_request.BASE_URL,
         isLoadMore: false,
     },
 

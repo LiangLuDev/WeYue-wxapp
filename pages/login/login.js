@@ -55,4 +55,10 @@ Page({
         }
     }
 
+    ,bindtapRegister:function () {
+        wx.navigateTo({
+            url:'../register/register'
+        })
+    }
+
 })

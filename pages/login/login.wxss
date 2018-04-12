@@ -10,18 +10,18 @@
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-    font-size: 14px;
+    font-size: 20rpx;
 }
 
 .text-username{
     display: flex;
-    margin-top:10px;
-    margin-left: 10px;
-    font-size: 14px;
+    margin-top:10rpx;
+    margin-left: 10rpx;
+    font-size: 20rpx;
 }
 
 .button-confirm{
-    font-size: 14px;
+    font-size: 25rpx;
     margin-top: 20rpx;
     margin-left: 10rpx;
     margin-right: 10rpx;

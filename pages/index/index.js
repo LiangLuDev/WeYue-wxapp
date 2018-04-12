@@ -1,5 +1,4 @@
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-var contant = require('../constant.js');
 var dev_request = require('../../utils/dev_request');
 Page({
     data: {
@@ -8,7 +7,7 @@ Page({
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
-        base_url: contant.base_url
+        base_url: dev_request.BASE_URL
     },
     onLoad: function () {
         var that = this;
@@ -22,6 +21,8 @@ Page({
         });
 
         dev_request.Get('/classify', function (res) {
+            console.log(res.data)
+
             that.setData({
                 classifys: res.data
             })
