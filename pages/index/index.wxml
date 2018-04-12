@@ -14,7 +14,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <block wx:for="{{classifys.male}}">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.5.251:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://192.168.5.87:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>
@@ -24,7 +24,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
           <block wx:for="{{classifys.female}}">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.5.251:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://192.168.5.87:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>
@@ -34,7 +34,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
           <block wx:for="{{classifys.press}}">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.5.251:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://192.168.5.87:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>

@@ -18,7 +18,6 @@ Page({
         sliderLeft: 0,
         base_url: contant.base_url,
         isLoadMore: false,
-        loadStatus: '上拉加载'
     },
 
     /**
@@ -76,90 +75,27 @@ Page({
             page: page
 
         };
-        dev_request.Get('/books', data, function (res) {
-            console.log('success', res);
-            let loadStatus = '数据加载完毕';
-            let isLoadMore = false;
-
-            console.log(book.data);
-            if (page > 1) {
-                if (book.data.length > 0) {
-                    bookInfo.push(book.data)
-                    console.log(bookInfo)
+        dev_request.Get('/books', data, function (book) {
+            setTimeout(function () {
+                if (page > 1) {
+                    if (book.data.length > 0) {
+                        bookInfo.push(book.data)
+                        console.log(bookInfo)
+                    }
                 } else {
-                    loadStatus = '暂无更多书籍数据'
+                    bookInfo = []
+                    bookInfo = book.data
                 }
 
-            } else {
-                bookInfo = []
-                bookInfo = book.data
-            }
+                that.setData({
+                    books: bookInfo,
+                    isLoadMore: false
+                })
+            }, 1000)
 
-            that.setData({
-                books: bookInfo,
-                loadStatus: loadStatus,
-                isLoadMore: isLoadMore
-            })
-        }, function (err) {
-            console.log('err', err);
-            that.setData({
-                loadStatus: '数据加载错误',
-                isLoadMore: false
-            })
         });
 
-
-        // wx.request({
-        //     url: contant.base_url + '/books',
-        //     data: {
-        //         type: mType,
-        //         major: mMajor,
-        //         page: page
-        //     },
-        //     method: 'GET',
-        //     success: function (book) {
-        //         let loadStatus = '数据加载完毕'
-        //         let isLoadMore = false
-        //
-        //         console.log(book.data);
-        //         if (page > 1) {
-        //             if (book.data.data.length > 0) {
-        //                 bookInfo.push(book.data.data)
-        //                 console.log(bookInfo)
-        //             } else {
-        //                 loadStatus = '暂无更多书籍数据'
-        //             }
-        //
-        //         } else {
-        //             bookInfo = []
-        //             bookInfo = book.data.data
-        //         }
-        //
-        //         that.setData({
-        //             books: bookInfo,
-        //             loadStatus: loadStatus,
-        //             isLoadMore: isLoadMore
-        //         })
-        //     }, fail() {
-        //         that.setData({
-        //             loadStatus: '数据加载错误',
-        //             isLoadMore: false
-        //         })
-        //     }
-        //
-        // })
     },
-
-
-    // loadMore:function(){
-    //   this.setData({
-    //     loadStatus: '上拉加载数据',
-    //     isLoadMore: true
-    //   })
-    //   ++mPage
-    //   this.getBooks(mPage)
-    // },
-
 
     /**
      * 页面上拉触底事件的处理函数
@@ -167,14 +103,12 @@ Page({
     onReachBottom: function () {
         let that = this;
         this.setData({
-            loadStatus: '正在加载数据',
             isLoadMore: true
         })
 
-        setTimeout(function () {
-            ++mPage
-            that.getBooks(mPage)
-        }, 2000)
+        ++mPage
+        that.getBooks(mPage)
+
 
     },
 
