@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.1.223:3389/api';
+const BASE_URL = 'http://127.0.0.1:3389/api';
 const app = getApp();
 
 /**
@@ -28,11 +28,11 @@ function request(url, method, data, success, fail) {
     } else {
         console.log("传递参数个数不正确");
     }
-
+    console.log(app.globalData.user_info);
     let wxtask = wx.request({
         url: BASE_URL + url,
         header: {
-            'access-token': wx.getStorageSync('userinfo').access_token?"access-token":wx.getStorageSync('userinfo').access_token,
+            'access-token': app.globalData.user_info.token,
             'app-type': 'wx-app'
         },
         method: method,
@@ -71,9 +71,9 @@ function request(url, method, data, success, fail) {
                         duration: 1000
                     })
                     //token无效跳转登录页面
-                    setTimeout(wx.navigateTo({
+                    wx.navigateTo({
                         url: "../login/login"
-                    }), 1000)
+                    })
 
                     break
             }

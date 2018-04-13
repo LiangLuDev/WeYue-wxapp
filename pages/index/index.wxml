@@ -2,7 +2,7 @@
   <view class="page__bd">
     <view class="weui-tab">
       <view class="weui-navbar">
-        <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+        <block wx:for="{{tabs}}" wx:key="{{index}}">
           <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
             <view class="weui-navbar__title">{{item}}</view>
           </view>
@@ -12,9 +12,9 @@
       <view class="weui-tab__panel">
         <!--男生分类板块  -->
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <block wx:for="{{classifys.male}}">
+          <block wx:for="{{classifys.male}}" wx:key="unique">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.1.223:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://127.0.0.1:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>
@@ -22,9 +22,9 @@
         </view>
         <!--女生分类板块  -->
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-          <block wx:for="{{classifys.female}}">
+          <block wx:for="{{classifys.female}}" wx:key="unique">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.1.223:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://127.0.0.1:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>
@@ -32,9 +32,9 @@
         </view>
         <!--出版分类板块  -->
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-          <block wx:for="{{classifys.press}}">
+          <block wx:for="{{classifys.press}}" wx:key="unique">
             <view class="classify__content" bindtap='startBooks' data-major='{{item.name}}' >
-              <image class='classify__image' src='http://192.168.1.223:3389{{item.icon}}'></image>
+              <image class='classify__image' src='http://127.0.0.1:3389{{item.icon}}'></image>
               <text class='classify__text__name'>{{item.name}}</text>
               <text class='classify__text__count'>{{item.bookCount}}本</text>
             </view>

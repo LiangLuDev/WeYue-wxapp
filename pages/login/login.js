@@ -34,23 +34,13 @@ Page({
             }
             dev_request.Get('/user/login', data, function (res) {
                 console.log(res.data);
-                wx.setStorage({
-                    key: 'userinfo',
-                    data: res.data,
-                    success: function () {
-                        wx.showToast({
-                            title: '登录成功',
-                            icon: 'success',
-                            duration: 1000
-                        })
-                        setTimeout(function () {
-                            wx.navigateBack()//登录成功返回上一页
-                        }, 1000)
-
-                    }
+                app.globalData.user_info=res.data
+                wx.showToast({
+                    title: '登录成功',
+                    icon: 'success',
+                    duration: 1000
                 })
-
-
+                wx.navigateBack()//登录成功返回上一页
             })
         }
     }

@@ -42,6 +42,7 @@ Page({
                     icon: 'success',
                     duration: 1000
                 })
+                wx.navigateBack()//登录成功返回上一页
             })
         }
     }

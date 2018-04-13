@@ -27,7 +27,7 @@ Page({
         let userinfo = wx.getStorageSync('userinfo');
         if (userinfo) {
             this.setData({
-                avatar: dev_request.BaseUrl + userinfo.icon,
+                avatar: dev_request.BASE_URL + userinfo.icon,
                 username: userinfo.nickname
             })
         }

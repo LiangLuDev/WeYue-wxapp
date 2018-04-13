@@ -39,6 +39,6 @@ App({
     openid: 'openid',
     appid: 'wxcf431e81711984db',
     appsecret: '07a921c4ff08a0609411c25ed0c1fb08',
-    access_token:'access_token'
+    user_info:'',
   }
 })
