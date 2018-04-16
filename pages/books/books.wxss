@@ -18,6 +18,7 @@ page, .page, .page__bd {
 }
 
 .book__content {
+  display: flex;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -30,6 +31,7 @@ page, .page, .page__bd {
 
 .book__text__title{
   font-size: 14px;
+  margin-left: 20rpx;
 }
 
 .book__text__author{

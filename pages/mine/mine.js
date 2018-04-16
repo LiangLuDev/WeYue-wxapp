@@ -24,7 +24,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        let userinfo = wx.getStorageSync('userinfo');
+        let userinfo = app.globalData.user_info;
+        console.log("icon",dev_request.BASE_URL + userinfo.icon)
         if (userinfo) {
             this.setData({
                 avatar: dev_request.BASE_URL + userinfo.icon,

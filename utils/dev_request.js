@@ -1,4 +1,4 @@
-const BASE_URL = 'http://127.0.0.1:3389/api';
+const BASE_URL = 'http://127.0.0.1:3389';
 const app = getApp();
 
 /**
@@ -30,7 +30,7 @@ function request(url, method, data, success, fail) {
     }
     console.log(app.globalData.user_info);
     let wxtask = wx.request({
-        url: BASE_URL + url,
+        url: BASE_URL + '/api' + url,
         header: {
             'access-token': app.globalData.user_info.token,
             'app-type': 'wx-app'

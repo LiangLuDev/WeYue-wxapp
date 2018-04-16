@@ -1,5 +1,6 @@
 // pages/register/register.js
 let dev_request = require('../../utils/dev_request');
+let md5 = require('../../utils/md5');
 Page({
 
     /**
@@ -18,6 +19,7 @@ Page({
         let username = e.detail.value.username;
         let password = e.detail.value.password;
         let confirm_password = e.detail.value.confirm_password;
+
         if (username.length === 0 || password.length === 0 || confirm_password.length === 0) {
             wx.showToast({
                 title: '用户名或密码不得为空!',
@@ -31,9 +33,10 @@ Page({
                 duration: 1000
             })
         } else {
+            console.log(e)
             let data = {
                 name: username,
-                password: password
+                password: md5.hexMD5(password)
             }
 
             dev_request.Post('/user/register', data, function (res) {
