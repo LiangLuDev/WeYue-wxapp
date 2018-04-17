@@ -16,9 +16,14 @@
         <scroll-view style='height:100%' scroll-y="true" >
             <view wx:for="{{books}}" wx:key="unique">
               <view class="book__content" bindtap='startBooksDetail' data-major='{{item.title}}' data-bookid='{{item._id}}'>
+                <view class='book_image_view'>
                 <image class='book__image' src='http://statics.zhuishushenqi.com{{item.cover}}'></image>
+                </view>
+                <view class="book_text">
                 <text class='book__text__title'>{{item.title}}</text>
                 <text class='book__text__author'>{{item.author}}|{{item.majorCate}}</text>
+                <text class='book__text__brief'>{{item.longIntro}}</text>
+                </view>
               </view>
             </view>
           <view class="weui-loadmore" hidden="{{isLoadMore}}">

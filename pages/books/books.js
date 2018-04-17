@@ -36,6 +36,10 @@ Page({
         wx.setNavigationBarTitle({
             title: mMajor
         });
+
+    },
+
+    onShow:function () {
         this.getBooks(1)
     },
 
