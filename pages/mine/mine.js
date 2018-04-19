@@ -25,7 +25,6 @@ Page({
      */
     onShow: function () {
         let userinfo = app.globalData.user_info;
-        console.log("icon",dev_request.BASE_URL + userinfo.icon)
         if (userinfo) {
             this.setData({
                 avatar: dev_request.BASE_URL + userinfo.icon,

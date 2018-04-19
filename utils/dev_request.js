@@ -1,4 +1,7 @@
-const BASE_URL = 'http://127.0.0.1:3389';
+// const BASE_URL = 'http://127.0.0.1:3389';
+const BASE_URL = 'http://192.168.1.121:3389';
+// const BASE_URL = 'http://120.55.57.236';
+const ZHUISHU_URL = 'http://statics.zhuishushenqi.com';
 const app = getApp();
 
 /**
@@ -28,7 +31,6 @@ function request(url, method, data, success, fail) {
     } else {
         console.log("传递参数个数不正确");
     }
-    console.log(app.globalData.user_info);
     let wxtask = wx.request({
         url: BASE_URL + '/api' + url,
         header: {
@@ -38,7 +40,6 @@ function request(url, method, data, success, fail) {
         method: method,
         data: data,
         success: function (res) {
-            console.log(res.data.code);
             switch (res.data.code) {
                 case 10000:
                 case 10001:
@@ -144,3 +145,4 @@ exports.Get = Get;
 exports.Post = Post;
 exports.Delete = Delete;
 exports.BASE_URL = BASE_URL;
+exports.ZHUISHU_URL = ZHUISHU_URL;

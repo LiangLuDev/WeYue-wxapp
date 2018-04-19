@@ -1,0 +1,12 @@
+<template name="books-item">
+    <view class="tab-view" wx:for="{{books}}" wx:key="unique">
+        <view class="book__content" bindtap='startBooksDetail' data-major='{{item.title}}' data-bookid='{{item._id}}'>
+            <image class='book__image' src='{{item.cover}}'></image>
+            <view class="book_text">
+                <text class='book__text__title'>{{item.title}}</text>
+                <text class='book__text__author'>{{item.author}}  |  {{item.majorCate}}</text>
+                <text class='book__text__brief'>{{item.longIntro}}</text>
+            </view>
+        </view>
+    </view>
+</template>

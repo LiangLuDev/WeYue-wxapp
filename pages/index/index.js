@@ -21,7 +21,16 @@ Page({
         });
 
         dev_request.Get('/classify', function (res) {
-            console.log(res.data)
+            //图片地址加上链接
+            res.data.male.forEach(function (item) {
+                item.icon = dev_request.BASE_URL + item.icon
+            })
+            res.data.female.forEach(function (item) {
+                item.icon = dev_request.BASE_URL + item.icon
+            })
+            res.data.press.forEach(function (item) {
+                item.icon = dev_request.BASE_URL + item.icon
+            })
 
             that.setData({
                 classifys: res.data

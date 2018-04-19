@@ -1,0 +1,6 @@
+<template name="empty-view">
+    <view class="empty-view-content">
+        <image class="empty-image" src="../../image/empty-book.png"/>
+        <text class="empty-text">{{empty_msg}}</text>
+    </view>
+</template>

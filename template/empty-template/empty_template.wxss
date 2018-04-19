@@ -1,0 +1,19 @@
+.empty-view-content {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-image {
+    width: 89rpx;
+    height: 64rpx;
+}
+
+.empty-text {
+    color: #333333;
+    margin-top: 20rpx;
+    font-size: 25rpx;
+}

@@ -1,0 +1,34 @@
+
+.classify__content {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10rpx;
+    box-shadow:6rpx 6rpx 6rpx rgba(0,0,0,0.1);
+    text-align: left;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20rpx;
+    margin: 20rpx;
+
+}
+
+.classify__image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+}
+
+.classify__text__name {
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    color: black;
+}
+
+.classify__text__count {
+    padding-right: 30rpx;
+    text-align: right;
+    font-size: 24rpx;
+    color: #666;
+    flex: 1;
+}

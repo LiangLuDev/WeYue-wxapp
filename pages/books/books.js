@@ -1,9 +1,9 @@
 let sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 let dev_request = require('../../utils/dev_request');
-let mMajor = ''
-let mPage = 1
-let mType = 'hot';
-let bookInfo = [];
+let mMajor
+let mPage
+let mType
+let bookInfo
 Page({
 
     /**
@@ -16,7 +16,8 @@ Page({
         sliderOffset: 0,
         sliderLeft: 0,
         base_url: dev_request.BASE_URL,
-        isLoadMore: false,
+        isEmpty:false,
+        empty_msg:'兄dei,此分类书籍等待添加'
     },
 
     /**
@@ -32,31 +33,36 @@ Page({
                 });
             }
         });
+        mPage = 1
+        mType = 'hot'
         mMajor = options.major;
+        bookInfo = []
         wx.setNavigationBarTitle({
             title: mMajor
         });
 
     },
 
-    onShow:function () {
+    onShow: function () {
         this.getBooks(1)
     },
 
 
     tabClick: function (e) {
+        bookInfo = []
+        mPage = 1
         switch (e.currentTarget.id) {
             case '0':
                 mType = 'hot'
-                this.getBooks(1)
+                this.getBooks(mPage)
                 break
             case '1':
                 mType = 'new'
-                this.getBooks(1)
+                this.getBooks(mPage)
                 break
             case '2':
                 mType = 'reputation'
-                this.getBooks(1)
+                this.getBooks(mPage)
                 break
         }
 
@@ -79,22 +85,15 @@ Page({
 
         };
         dev_request.Get('/books', data, function (book) {
-            setTimeout(function () {
-                if (page > 1) {
-                    if (book.data.length > 0) {
-                        bookInfo.push(book.data)
-                        console.log(bookInfo)
-                    }
-                } else {
-                    bookInfo = []
-                    bookInfo = book.data
-                }
-
-                that.setData({
-                    books: bookInfo,
-                    isLoadMore: false
-                })
-            }, 1000)
+            book.data.forEach(function (item) {
+                item.cover = dev_request.ZHUISHU_URL + item.cover
+                bookInfo.push(item)
+            })
+            console.log(bookInfo);
+            that.setData({
+                books: bookInfo,
+                isEmpty:bookInfo.length === 0
+            })
 
         });
 
@@ -105,10 +104,6 @@ Page({
      */
     onReachBottom: function () {
         let that = this;
-        this.setData({
-            isLoadMore: true
-        })
-
         ++mPage
         that.getBooks(mPage)
 

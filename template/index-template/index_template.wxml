@@ -1,0 +1,7 @@
+<template name="index-item">
+    <view class="classify__content" bindtap='startBooks' data-major='{{name}}'>
+        <image class='classify__image' src='{{icon}}'></image>
+        <text class='classify__text__name'>{{name}}</text>
+        <text class='classify__text__count'>{{bookCount}}本</text>
+    </view>
+</template>
