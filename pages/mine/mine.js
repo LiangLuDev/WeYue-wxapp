@@ -28,7 +28,7 @@ Page({
         if (userinfo) {
             this.setData({
                 avatar: dev_request.BASE_URL + userinfo.icon,
-                username: userinfo.nickname
+                username: userinfo.nickname,
             })
         }
     },

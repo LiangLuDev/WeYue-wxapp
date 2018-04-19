@@ -1,13 +1,13 @@
 <view>
     <form bindsubmit="formRegister">
-        <text class="text-username">用户名</text>
+        <text class="text-username">用户名:</text>
         <input name="username" class="input-username" placeholder="输入用户名" type="number" maxlength="20"/>
 
-        <text class="text-username">密码</text>
+        <text class="text-username">密码:</text>
         <input name="password" class="input-username" placeholder="输入密码" type="password" confirm-type="next"
                maxlength="20"/>
 
-        <text class="text-username">确认密码</text>
+        <text class="text-username">确认密码:</text>
         <input name="confirm_password" class="input-username" placeholder="再次输入密码" type="password" confirm-type="next"
                maxlength="20"/>
 

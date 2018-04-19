@@ -1,23 +1,28 @@
+.page{
+    width: 100%;
+}
 
 .view-top{
     background: #00BCD4;
     width: inherit;
-    height: 100px;
+    height: 250rpx;
 }
+.user-view{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: -60rpx;
+    align-items: center;
 
+}
 
 .img_avatar {
     width: 128rpx;
     height: 128rpx;
-    margin-top: -60rpx;
-    margin-left: 40rpx;
-    border-radius: 50%;
-    display: flex;
 
+    border-radius: 50%;
 }
 .text_username{
-    font-size: 35rpx;
-    margin-top:30rpx;
-    margin-left: 45rpx;
-    justify-content: center;
+    font-size: 30rpx;
+    margin-top:15rpx;
 }

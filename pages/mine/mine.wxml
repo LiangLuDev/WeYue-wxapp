@@ -1,9 +1,9 @@
 <view class="page">
 
 
-    <view class="view-top">
-    </view>
+    <view class="view-top" />
+    <view class="user-view">
     <image class='img_avatar' src='{{avatar}}' bindtap="bindTapUseravatar"></image>
     <text class="text_username">{{username}}</text>
-
+    </view>
 </view>

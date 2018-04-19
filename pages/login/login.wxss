@@ -1,30 +1,24 @@
 .input-username {
-    border: lightgrey;
-    border-style: solid;
-    border-width: 1px;
-    height: 31px;
-    padding-left: 10px;
-    margin: 10rpx;
-    border-radius: 5 rpx;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    font-size: 20rpx;
+    border: 1px solid lightgrey;
+    height: 60rpx;
+    padding-left: 20rpx;
+    margin: 20rpx;
+    border-radius: 8rpx;
+    font-size: 25rpx;
 }
 
 .text-username{
     display: flex;
     margin-top:10rpx;
-    margin-left: 10rpx;
-    font-size: 20rpx;
+    margin-left: 20rpx;
+    font-size: 25rpx;
 }
 
 .button-confirm{
     font-size: 25rpx;
     margin-top: 20rpx;
-    margin-left: 10rpx;
-    margin-right: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 
     background-color: #00BCD4;
     color: #f0f0f0;
