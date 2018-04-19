@@ -44,7 +44,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 25rpx;
-    margin-top: 10rpx;
+    margin-top: 15rpx;
     color: #00BCD4;
     height: 25rpx;
     line-height: 25rpx;
@@ -56,7 +56,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 25rpx;
-    margin-top: 10rpx;
+    margin-top: 15rpx;
     height: 25rpx;
     line-height: 25rpx;
 }
