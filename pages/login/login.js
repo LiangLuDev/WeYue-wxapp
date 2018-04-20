@@ -33,7 +33,6 @@ Page({
                 password: password
             }
             dev_request.Get('/user/login', data, function (res) {
-                console.log(res.data);
                 app.globalData.user_info=res.data
                 wx.showToast({
                     title: '登录成功',

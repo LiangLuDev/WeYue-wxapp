@@ -33,12 +33,10 @@ Page({
                 duration: 1000
             })
         } else {
-            console.log(e)
             let data = {
                 name: username,
                 password: md5.hexMD5(password)
             }
-
             dev_request.Post('/user/register', data, function (res) {
                 wx.showToast({
                     title: res.data,

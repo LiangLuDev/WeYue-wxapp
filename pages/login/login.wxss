@@ -15,10 +15,11 @@
 }
 
 .button-confirm{
-    font-size: 25rpx;
+    font-size: 28rpx;
     margin-top: 20rpx;
     margin-left: 20rpx;
     margin-right: 20rpx;
     background-color: #00BCD4;
     color: #f0f0f0;
+    height: 70rpx;
 }

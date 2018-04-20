@@ -45,6 +45,7 @@ Page({
 
     onShow: function () {
         this.getBooks(1)
+        bookInfo = []
     },
 
 
@@ -89,7 +90,6 @@ Page({
                 item.cover = dev_request.ZHUISHU_URL + item.cover
                 bookInfo.push(item)
             })
-            console.log(bookInfo);
             that.setData({
                 books: bookInfo,
                 isEmpty:bookInfo.length === 0
@@ -97,6 +97,17 @@ Page({
 
         });
 
+    },
+
+
+    /**
+     * 跳转书籍详情
+     * @param params
+     */
+    startBooksDetail:function (params) {
+        wx.navigateTo({
+            url: '../detail/detail?book_name=' + params.currentTarget.dataset.book_name+"&bookid="+params.currentTarget.dataset.bookid,
+        })
     },
 
     /**

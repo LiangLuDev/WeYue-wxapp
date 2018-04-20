@@ -1,0 +1,63 @@
+<scroll-view class="book_detail_sv">
+    <!--书籍基本信息-->
+    <view class="book_info">
+        <image class="book_image" src="{{bookinfo.cover}}"></image>
+        <view class="book_text">
+            <text class="book_title">{{bookinfo.title}}</text>
+            <view class="book_author_type">
+                <text class="book_text_author">{{bookinfo.author}}</text>
+                <text class="text_|" >|</text>
+                <text class="book_text_type">{{bookinfo.majorCate}}</text>
+            </view>
+            <view class="book_author_type">
+                <text class="book_text_type">{{bookinfo.wordCount}}</text>
+                <text class="text_|" >|</text>
+                <text class="book_text_type">{{bookinfo.updated}}</text>
+            </view>
+        </view>
+
+        <view class="view_score">
+            <text class="text_zhuishu">追书评分</text>
+            <text class="text_score">{{bookinfo.rating.score}}</text>
+            <text class="text_evaluate">{{bookinfo.rating.count}}人评</text>
+        </view>
+    </view>
+    <!--书籍人气、留存、日更数-->
+    <view class="book_fow">
+        <!--人气-->
+        <view class="v_fow_num">
+            <text class="text_fow">追书人气</text>
+            <text class="text_fow_num">{{bookinfo.latelyFollower}}</text>
+        </view>
+
+        <!--<view class="v_vertical_line"/>-->
+
+        <!--留存-->
+        <view class="v_fow_num">
+            <text class="text_fow">读者留存</text>
+            <text class="text_fow_num">{{bookinfo.retentionRatio}}%</text>
+        </view>
+
+        <!--<view class="v_vertical_line"/>-->
+
+        <!--日更-->
+        <view class="v_fow_num">
+            <text class="text_fow">日更新字</text>
+            <text class="text_fow_num">{{bookinfo.serializeWordCount}}</text>
+        </view>
+    </view>
+
+    <view class="v_horizontal_line"/>
+
+    <view class="v_brief">
+        <view class="v_view"/>
+        <text class="text_brief_name">简介</text>
+    </view>
+    <text class="text_brief">{{bookinfo.longIntro}}</text>
+    <view class="v_horizontal_line"/>
+
+    <view class="bottom_view">
+        <text class="add" bindtap="addBook">{{addText}}</text>
+        <text class="read" bindtap="readBook">开始阅读</text>
+    </view>
+</scroll-view>

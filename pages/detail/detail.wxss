@@ -1,0 +1,69 @@
+.book_detail_sv{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/*书籍信息*/
+.book_info{
+    display: flex;
+    flex-direction: row;
+    background-color: #fafafa;
+    margin-top: 15rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+}
+.book_image{
+    width: 65px;
+    height: 87px;
+    border-radius: 6rpx;
+}
+.book_text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15rpx;
+}
+.book_title{
+    color: black;
+    font-size: 30rpx;
+}
+.book_author_type{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+}
+.text_{
+    margin-left: 10rpx;
+    margin-right:10rpx;
+    font-size: 24rpx;
+    color: #515151;
+}
+.book_text_author{
+    font-size: 24rpx;
+    color: #00BCD4;
+}
+.book_text_type{
+    font-size: 24rpx;
+    color: #515151;
+}
+
+.view_score{  display: flex;  flex-direction: column;  position: fixed;  right: 0;  padding: 20rpx 15rpx;  background-color: white;  align-items: center;  margin-right: 20rpx;  border-radius: 10rpx;  box-shadow:6rpx 6rpx 6rpx rgba(0,0,0,0.1);  }
+.text_zhuishu{  color: #515151;  font-size: 24rpx;  }
+.text_score{  color: #00BCD4;  font-size: 40rpx;  }
+.text_evaluate{  color: #515151;  font-size: 20rpx;  }
+.book_fow{  display: flex;  flex-direction: row;  min-height: 50rpx;  margin: 20rpx 40rpx;}
+.v_fow_num{  display: flex;  flex: auto;  flex-direction: column;  justify-content: center;  align-items: center;  border-right: 2rpx solid #aeadad;  }
+.v_fow_num:last-child {border:none;}
+.v_vertical_line{  flex: auto;  background-color: #aeadad;  width: 2rpx;  margin-top: 10rpx;  margin-bottom:10rpx;  height: 100%;  }
+.text_fow{  color: #515151;  font-size: 24rpx;  }
+.text_fow_num{  margin-top: 20rpx;  color: black;  font-size: 20rpx;  }
+.bottom_view{  display: flex;  flex-direction: row;  position: fixed;  bottom: 0;  width: 100%;  height: 80rpx;  }
+.v_horizontal_line{  background-color: #aeadad;  height: 2rpx;  flex: auto;  margin-left: 20rpx;  margin-right:20rpx;  margin-top: 20rpx;  }
+.v_brief{  margin-top: 20rpx;  line-height: 30rpx;  display: flex;  margin-left: 20rpx;  flex-direction: row;  }
+.v_view{  background-color: #00BCD4;  width: 5rpx;  height: 30rpx;  }
+.text_brief_name{  color: black;  font-size: 30rpx;  margin-left: 10rpx;  }
+.text_brief{  color: #515151;
+    margin: 20rpx 40rpx 20rpx 60rpx;
+    font-size: 24rpx;  display:block;  }
+.add{  display: flex;  align-items: center;  justify-content: center;  width: 50%;  height: 100%;  color: #00BCD4;  background-color: white;  font-size: 28rpx;  }
+.read{  display: flex;  align-items: center;  justify-content: center;  width: 50%;  height: 100%;  color: white;  font-size: 28rpx;  background-color: #00BCD4;  }
