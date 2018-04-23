@@ -1,0 +1,11 @@
+.book_type_text{
+    font-size: 25rpx;
+    color: #00BCD4;
+    border-radius: 30rpx;
+    border: 2rpx solid black;
+    padding: 0rpx 20rpx;
+    display:inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin: 10rpx;
+}

@@ -1,3 +1,4 @@
+@import "../../template/book-type-template/book_type_template.wxss";
 .book_detail_sv{
     display: flex;
     width: 100%;
@@ -67,3 +68,7 @@
     font-size: 24rpx;  display:block;  }
 .add{  display: flex;  align-items: center;  justify-content: center;  width: 50%;  height: 100%;  color: #00BCD4;  background-color: white;  font-size: 28rpx;  }
 .read{  display: flex;  align-items: center;  justify-content: center;  width: 50%;  height: 100%;  color: white;  font-size: 28rpx;  background-color: #00BCD4;  }
+.book_type{
+    display: flex;
+    margin: 20rpx;
+}

@@ -50,7 +50,7 @@ Page({
      */
     addBook: function () {
         let that=this
-        let url = '/bookshelf'
+        let url = '/user/bookshelf'
         let data = {
             bookid: bookid,
         }

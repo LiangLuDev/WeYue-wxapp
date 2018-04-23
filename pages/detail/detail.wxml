@@ -1,3 +1,4 @@
+<import src="../../template/book-type-template/book_type_template.wxml"/>
 <scroll-view class="book_detail_sv">
     <!--书籍基本信息-->
     <view class="book_info">
@@ -6,12 +7,12 @@
             <text class="book_title">{{bookinfo.title}}</text>
             <view class="book_author_type">
                 <text class="book_text_author">{{bookinfo.author}}</text>
-                <text class="text_|" >|</text>
+                <text class="text_|">|</text>
                 <text class="book_text_type">{{bookinfo.majorCate}}</text>
             </view>
             <view class="book_author_type">
                 <text class="book_text_type">{{bookinfo.wordCount}}</text>
-                <text class="text_|" >|</text>
+                <text class="text_|">|</text>
                 <text class="book_text_type">{{bookinfo.updated}}</text>
             </view>
         </view>
@@ -55,6 +56,13 @@
     </view>
     <text class="text_brief">{{bookinfo.longIntro}}</text>
     <view class="v_horizontal_line"/>
+
+    <view class="book_type">
+        <block  wx:for="{{bookinfo.tags}}" wx:key="unique">
+            <template is="book-type" data="{{item}}"/>
+        </block>
+    </view>
+
 
     <view class="bottom_view">
         <text class="add" bindtap="addBook">{{addText}}</text>
