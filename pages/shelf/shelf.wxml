@@ -1,3 +1,9 @@
-<!--pages/shelf/shelf.wxml-->
-<text>pages/shelf/shelf.wxml</text>
-
+<import src="../../template/empty-template/empty_template.wxml"/>
+<scroll-view style='height:100%' scroll-y="true">
+    <block wx:if="{{isEmpty}}">
+        <template is="empty-view" data="{{empty_msg}}"/>
+    </block>
+    <block wx:else>
+        <template is="books-item" data="{{books}}"/>
+    </block>
+</scroll-view>
