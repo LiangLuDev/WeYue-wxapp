@@ -1,1 +1,44 @@
-/* pages/shelf/shelf.wxss */
+.tab-view {
+    background-color: #fafafa;
+}
+
+.book__content {
+    margin: 20rpx;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    border-radius: 10rpx;
+    box-shadow:6rpx 6rpx 6rpx rgba(0,0,0,0.1);
+
+}
+
+.book__image {
+    width: 65px;
+    height: 87px;
+    margin-left: 10rpx;
+}
+
+.book_text {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: 10rpx;
+}
+
+.book__text__title {
+    color: #515151;
+    font-size: 30rpx;
+}
+
+.book__text__brief {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    margin-top: 25rpx;
+    color: #00BCD4;
+    line-height: 25rpx;
+}

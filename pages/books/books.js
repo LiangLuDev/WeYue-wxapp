@@ -17,7 +17,7 @@ Page({
         sliderLeft: 0,
         base_url: dev_request.BASE_URL,
         isEmpty:false,
-        empty_msg:'兄dei,此分类书籍等待添加'
+        empty_msg:'Pen友，别慌，此分类还没有添加书籍'
     },
 
     /**

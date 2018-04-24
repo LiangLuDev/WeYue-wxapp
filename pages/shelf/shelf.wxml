@@ -4,6 +4,14 @@
         <template is="empty-view" data="{{empty_msg}}"/>
     </block>
     <block wx:else>
-        <template is="books-item" data="{{books}}"/>
+        <view class="tab-view" wx:for="{{books}}" wx:key="unique">
+            <view class="book__content" bindtap='openBook' data-book='{{item}}'>
+                <image class='book__image' src='{{item.cover}}'></image>
+                <view class="book_text">
+                    <text class='book__text__title'>{{item.title}}</text>
+                    <text class='book__text__brief'>最新更新：{{item.lastChapter}}</text>
+                </view>
+            </view>
+        </view>
     </block>
 </scroll-view>

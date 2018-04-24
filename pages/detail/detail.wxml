@@ -57,12 +57,15 @@
     <text class="text_brief">{{bookinfo.longIntro}}</text>
     <view class="v_horizontal_line"/>
 
+    <view class="v_brief">
+        <view class="v_view"/>
+        <text class="text_brief_name">标签</text>
+    </view>
     <view class="book_type">
         <block  wx:for="{{bookinfo.tags}}" wx:key="unique">
             <template is="book-type" data="{{item}}"/>
         </block>
     </view>
-
 
     <view class="bottom_view">
         <text class="add" bindtap="addBook">{{addText}}</text>
