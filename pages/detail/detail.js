@@ -14,14 +14,25 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let that = this
+
         bookid = options.bookid
         wx.setNavigationBarTitle({
             title: options.book_name
         });
 
 
+    },
+
+
+
+    onShow:function () {
+        let that = this
+        wx.showLoading({
+            title:'加载中'
+        })
+
         dev_request.Get('/books/' + bookid, function (bookdetail) {
+            wx.hideLoading()
             let data = bookdetail.data
             data.cover = dev_request.ZHUISHU_URL + bookdetail.data.cover
             let wordCount = data.wordCount + '字'
@@ -42,7 +53,6 @@ Page({
                 addText: addText
             })
         })
-
     },
 
     /**
@@ -84,7 +94,11 @@ Page({
      * 阅读书籍
      */
     readBook: function () {
-
+        let book=this.data.bookinfo
+        let isCollect=this.data.addText==='移除书架'
+        wx.navigateTo({
+            url: '../read/read?bookid='+bookid+'&isCollect='+isCollect+'&bookTitle='+book.title
+        })
     },
 
 

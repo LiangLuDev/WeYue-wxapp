@@ -1,0 +1,83 @@
+
+/*正文*/
+.chapter_sv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.chapter_view{
+    display: flex;
+    flex-direction: column;
+}
+.btn_chapters{
+    background-color: #00BCD4;
+    color: white;
+    float: left;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-top: 20rpx;
+}
+.text_chapter_name{
+    text-align: center;
+    display: block;
+    color: black;
+    margin-top: 10rpx;
+    font-size: 35rpx;
+}
+.text_chapter{
+    display: block;
+    color: black;
+    font-size: 25rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+.btn_view{
+    display: flex;
+    flex-direction: row;
+    margin: 20rpx 60rpx;
+}
+.btn_chapter{
+    color: white;
+    background-color: #00BCD4;
+    margin: 20rpx;
+}
+
+
+
+/*目录弹框*/
+.chapters_sv{
+    width:70%;
+    position:fixed;
+    left:0;
+    top: 0;
+    bottom:0;
+    background:antiquewhite;
+    transform:translate(-100%,0);
+    transition:all 0.2s linear;
+    z-index: 9;
+}
+
+.chapters_sv.show {
+    transform:translate(0,0);
+}
+
+.chapters_mask {
+    width:100%;
+    position:fixed;
+    left:0;
+    top: 0;
+    bottom:0;
+    background:rgba(0,0,0,.5);
+    z-index: 8;
+    display:none;
+}
+
+.chapters_mask.show {display:block;}
+
+.chapters_text{
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+}

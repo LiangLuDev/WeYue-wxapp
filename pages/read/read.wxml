@@ -1,0 +1,23 @@
+<view>
+
+    <scroll-view class="{{isOpenChapter ? 'chapters_sv show' : 'chapters_sv'}}">
+        <view class="chapters_text">目录</view>
+        <block>
+
+        </block>
+    </scroll-view>
+    <view class="{{isOpenChapter ? 'chapters_mask show' : 'chapters_mask'}}" bindtap="hideChapter"></view>
+
+    <scroll-view class="chapter_sv">
+
+        <text class="text_chapter_name">{{chapter.title}}</text>
+        <text class="text_chapter">{{chapter.cpContent}}</text>
+
+        <view class="btn_view">
+            <button class="btn_chapter" bindtap="preChapter" size="mini">上一章</button>
+            <button class="btn_chapter" bindtap="showChapter" size="mini">选择目录</button>
+            <button class="btn_chapter" bindtap="nextChapter" size="mini">下一章</button>
+        </view>
+    </scroll-view>
+
+</view>
