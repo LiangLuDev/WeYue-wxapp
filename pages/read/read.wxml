@@ -1,22 +1,38 @@
 <view>
 
-    <scroll-view class="{{isOpenChapter ? 'chapters_sv show' : 'chapters_sv'}}">
-        <view class="chapters_text">目录</view>
-        <block>
+    <scroll-view class="{{isOpenChapter ? 'chapters_view show' : 'chapters_view'}}" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower">
+            <view class="chapters_text">目录</view>
+            <block wx:for="{{chapters}}" wx:key="unique">
+                <view class="chapter_text_view">
+                    <block wx:if="{{currentChapter==index}}">
+                        <image class="ic_chapter" src="../../image/ic_chapter_current.png"/>
+                    </block>
+                    <block wx:else>
+                        <image class="ic_chapter" src="../../image/ic_chapter.png"/>
+                    </block>
+                    <text class="chapter_text">{{item.title}}</text>
+                </view>
 
-        </block>
+            </block>
     </scroll-view>
     <view class="{{isOpenChapter ? 'chapters_mask show' : 'chapters_mask'}}" bindtap="hideChapter"></view>
 
-    <scroll-view class="chapter_sv">
+    <scroll-view class="chapter_sv" scroll-y='{{isChapterScroll}}' scroll-with-animation="true">
 
         <text class="text_chapter_name">{{chapter.title}}</text>
         <text class="text_chapter">{{chapter.cpContent}}</text>
 
         <view class="btn_view">
-            <button class="btn_chapter" bindtap="preChapter" size="mini">上一章</button>
+            <block wx:if="{{currentChapter!=0}}">
+                <button class="btn_chapter" bindtap="preChapter" data-current_index="{{currentChapter}}" size="mini">上一章</button>
+            </block>
+
             <button class="btn_chapter" bindtap="showChapter" size="mini">选择目录</button>
-            <button class="btn_chapter" bindtap="nextChapter" size="mini">下一章</button>
+
+            <block wx:if="{{currentChapter!=chapters.length}}">
+                <button class="btn_chapter" bindtap="nextChapter" data-current_index="{{currentChapter}}" size="mini">下一章</button>
+            </block>
+
         </view>
     </scroll-view>
 

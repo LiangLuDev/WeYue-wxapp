@@ -58,8 +58,8 @@
     white-space: nowrap;
     font-size: 25rpx;
     margin-top: 15rpx;
-    height: 25rpx;
     color: #515151;
+    height: 25rpx;
     line-height: 25rpx;
 }
 .book_text_count{
