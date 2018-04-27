@@ -7,7 +7,8 @@ Page({
      */
     data: {
         bookinfo: '',
-        addText: '加入书架'
+        addText: '加入书架',
+        isHaveBookType:false
     },
 
     /**
@@ -16,9 +17,7 @@ Page({
     onLoad: function (options) {
 
         bookid = options.bookid
-        wx.setNavigationBarTitle({
-            title: options.book_name
-        });
+
 
 
     },
@@ -34,6 +33,9 @@ Page({
         dev_request.Get('/books/' + bookid, function (bookdetail) {
             wx.hideLoading()
             let data = bookdetail.data
+            wx.setNavigationBarTitle({
+                title: data.title
+            });
             data.cover = dev_request.ZHUISHU_URL + bookdetail.data.cover
             let wordCount = data.wordCount + '字'
             if (data.wordCount / 10000 > 0) {
@@ -50,7 +52,8 @@ Page({
             let addText = data.isCollect ? '移除书架' : '加入书架'
             that.setData({
                 bookinfo: bookdetail.data,
-                addText: addText
+                addText: addText,
+                isHaveBookType:data.tags.length>0
             })
         })
     },

@@ -1,43 +1,53 @@
 let dev_request = require('../../utils/dev_request');
+let isCollect = false;
+let bookid;
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isOpenChapter: false,
-        isCollect:false,
-        chapters:'',
-        chapter:'',
-        currentChapter:0,
-        isChapterScroll:true,//正文是否可滑动
+        isOpenChapter: false,//是否打开目录弹框
+        isCollect: false,//是否收藏
+        chapters: '',//目录
+        chapter: '',//正文
+        currentChapter: 0,//当前目录下标
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let that=this
-        let bookid = options.bookid
+        let that = this
+        bookid = options.bookid
+        isCollect = options.isCollect
 
         wx.setNavigationBarTitle({
             title: options.bookTitle
         });
 
         dev_request.Get('/books/' + bookid + '/chapters', function (bookChapters) {
-            console.log(bookChapters);
-            that.getChapter(bookChapters.data.chapters[0].link)
+
+
+            wx.getStorage({
+                key: bookid,
+                success: res => {
+                    that.getChapter(bookChapters.data.chapters[res.data.chapterIndex].link)
+                    that.setData({
+                        currentChapter: res.data.chapterIndex
+                    })
+                }, fail: err => {
+                    console.log(err);
+                    that.getChapter(bookChapters.data.chapters[0].link)
+                }
+            });
+
+
             that.setData({
-                chapters:bookChapters.data.chapters
+                chapters: bookChapters.data.chapters
             })
         })
 
-
-
-        let isCollect = options.isCollect
-        this.setData({
-            isCollect:isCollect === 'true'
-        })
 
     },
 
@@ -45,27 +55,14 @@ Page({
      * 获取正文
      * @param link
      */
-    getChapter:function (link) {
-        let that=this
+    getChapter: function (link) {
+        let that = this
         wx.request({
-            url:'http://chapterup.zhuishushenqi.com/chapter/'+link,
-            success:bookChapter=>{
-                console.log(bookChapter);
+            url: 'http://chapterup.zhuishushenqi.com/chapter/' + link,
+            success: bookChapter => {
                 that.setData({
-                    chapter:bookChapter.data.chapter
+                    chapter: bookChapter.data.chapter,
                 })
-
-
-                if (wx.pageScrollTo) {
-                    wx.pageScrollTo({
-                        scrollTop: 0
-                    })
-                } else {
-                    wx.showModal({
-                        title: '提示',
-                        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
-                    })
-                }
             }
         })
     },
@@ -89,13 +86,14 @@ Page({
      * 上一章数据获取
      * @param params
      */
-    preChapter:function (params) {
-        let currentIndex=params.currentTarget.dataset.current_index
+    preChapter: function (params) {
+        let currentIndex = params.currentTarget.dataset.current_index
         currentIndex--
-        let chapter=this.data.chapters[currentIndex]
+        let chapter = this.data.chapters[currentIndex]
         this.getChapter(chapter.link)
         this.setData({
-            currentChapter:currentIndex
+            currentChapter: currentIndex,
+            chapter: ""
         })
 
     },
@@ -103,27 +101,44 @@ Page({
      * 下一章数据获取
      * @param params
      */
-    nextChapter:function (params) {
-        let currentIndex=params.currentTarget.dataset.current_index
+    nextChapter: function (params) {
+        let currentIndex = params.currentTarget.dataset.current_index
         currentIndex++
-        let chapter=this.data.chapters[currentIndex]
+        let chapter = this.data.chapters[currentIndex]
         this.getChapter(chapter.link)
         this.setData({
-            currentChapter:currentIndex
+            currentChapter: currentIndex,
+            chapter: ""
         })
 
     },
-    upper:function (e) {
-        console.log(e);
-        this.setData({
-            isChapterScroll:false
-        })
+
+    selectChapter: function (params) {
+        let index = params.currentTarget.dataset.index
+        if (this.data.currentChapter !== index) {
+            let chapter = this.data.chapters[index]
+            this.getChapter(chapter.link)
+            this.setData({
+                currentChapter: index,
+                isOpenChapter: false
+            })
+
+        }
     },
-    lower:function (e) {
-        console.log(e);
-        this.setData({
-            isChapterScroll:false
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function () {
+        let data = {
+            bookid: bookid,
+            chapterIndex: this.data.currentChapter,
+        }
+        wx.setStorage({
+            key: bookid,
+            data: data
         })
-    }
+
+
+    },
 
 })

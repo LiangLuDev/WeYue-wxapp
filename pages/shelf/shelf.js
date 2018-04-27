@@ -35,6 +35,13 @@ Page({
                 that.isEmpty = false
             }
         })
+    },
+
+    openBook: function (params) {
+        let book=params.currentTarget.dataset.book
+        wx.navigateTo({
+            url: '../read/read?bookid=' + book._id + '&isCollect=' + book.isCollect + '&bookTitle=' + book.title
+        })
     }
 
 

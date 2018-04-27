@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        avatar: '../../image/dev.jpg',
+        avatar: '../../image/dev.png',
         username: '未登录',
     },
 
