@@ -7,7 +7,8 @@
     "pages/login/login",
     "pages/register/register",
     "pages/detail/detail",
-    "pages/read/read"
+    "pages/read/read",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

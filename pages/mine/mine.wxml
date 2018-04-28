@@ -1,9 +1,14 @@
 <view class="page">
 
 
-    <view class="view-top" />
+    <view class="view-top"/>
+    <image class="arc_image" src="../../image/ic_mine_arc.png"/>
     <view class="user-view">
-    <image class='img_avatar' src='{{avatar}}' bindtap="bindTapUseravatar"></image>
-    <text class="text_username">{{username}}</text>
+        <image class='img_avatar' src='{{avatar}}' bindtap="bindTapUseravatar"></image>
+        <text class="text_username">{{username}}</text>
     </view>
+    <view class="mine_view" bindtap="aboutAuthor">关于作者</view>
+    <block wx:if="{{username!=='未登录'}}">
+    <view class="mine_view" bindtap="outLogin">退出登录</view>
+    </block>
 </view>

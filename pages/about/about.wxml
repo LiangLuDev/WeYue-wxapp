@@ -1,0 +1,10 @@
+
+<view class="page">
+    <image class="img_avatar" src="../../image/dev.png"/>
+    <view class="about_v">作者是Android Developer，开发这个小程序的辛酸历程（只有我懂），官方api是最好的教程，本项目设计主要是来源于Android端，后端使用NodeJs，有很多不足，谅解（毕竟第一次）</view>
+    <br/>
+    <br/>
+    <br/>
+    <view class="about_v">项目GitHub地址</view>
+    <view class="about_v">https://github.com/LiangLuDev/WeYue-wxapp</view>
+</view>

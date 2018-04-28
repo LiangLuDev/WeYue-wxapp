@@ -1,0 +1,19 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.img_avatar {
+    margin-top: 20rpx;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+}
+
+.about_v{
+    font-size: 28rpx;
+    color: black;
+    margin: 20rpx;
+}

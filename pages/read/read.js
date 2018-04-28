@@ -120,7 +120,8 @@ Page({
             this.getChapter(chapter.link)
             this.setData({
                 currentChapter: index,
-                isOpenChapter: false
+                isOpenChapter: false,
+                chapter: ""
             })
 
         }

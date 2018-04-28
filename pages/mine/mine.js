@@ -39,5 +39,34 @@ Page({
                 url: "../login/login"
             })
         }
+    },
+    /**
+     * 关于作者
+     */
+    aboutAuthor:function () {
+        wx.navigateTo({
+            url: "../about/about"
+        })
+    }
+    ,
+    /**
+     * 退出登录
+     */
+    outLogin: function () {
+        let that=this
+        wx.showModal({
+            title: '是否退出登录？',
+            content: '退出后将清除用户本地用户信息以及阅读记录',
+            success: res => {
+                if (res.confirm) {
+                    wx.clearStorage()
+                    app.globalData.user_info = ''
+                    that.setData({
+                        avatar: '../../image/dev.png',
+                        username: '未登录',
+                    })
+                }
+            }
+        })
     }
 })

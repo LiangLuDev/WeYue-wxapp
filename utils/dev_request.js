@@ -1,6 +1,6 @@
 // const BASE_URL = 'http://192.168.1.223:3389';
-const BASE_URL = 'http://192.168.5.87:3389';
-// const BASE_URL = 'http://www.luliangdev.cn';
+// const BASE_URL = 'http://192.168.5.87:3389';
+const BASE_URL = 'http://www.luliangdev.cn';
 const ZHUISHU_URL = 'http://statics.zhuishushenqi.com';
 const app = getApp();
 

@@ -1,11 +1,18 @@
 .page{
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
 .view-top{
     background: #00BCD4;
     width: inherit;
-    height: 250rpx;
+    height: 230rpx;
+}
+
+.arc_image{
+    width:100%;
+    height: 50rpx;
 }
 .user-view{
     display: flex;
@@ -25,4 +32,18 @@
 .text_username{
     font-size: 30rpx;
     margin-top:15rpx;
+}
+
+.mine_view{
+    margin: 20rpx;
+    display: flex;
+    flex-direction: row;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    background-color: white;
+    border-radius: 10rpx;
+    box-shadow:6rpx 6rpx 6rpx rgba(0,0,0,0.1);
+    justify-content: center;
+    font-size: 28rpx;
+
 }

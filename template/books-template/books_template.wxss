@@ -7,8 +7,8 @@
     margin: 20rpx;
     display: flex;
     flex-direction: row;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
     background-color: white;
     border-radius: 10rpx;
     box-shadow:6rpx 6rpx 6rpx rgba(0,0,0,0.1);

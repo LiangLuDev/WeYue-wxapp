@@ -40,5 +40,5 @@
     font-size: 28rpx;
     margin-top: 25rpx;
     color: #00BCD4;
-    line-height: 25rpx;
+    line-height: 30rpx;
 }
