@@ -11,4 +11,4 @@
 - 书籍分类
 
 #### 小程序预览
-![Alt text](./wxapp-bookshelf.png)![Alt text](./wxapp-personal.png)![Alt text](./wxapp-chapters.png)![Alt text](./wxapp-home.png)![Alt text](./wxapp-detail.png)![Alt text](./wxapp-classify.png)![Alt text](./wxapp-read.png)
+![Alt text](./wxapp.png)
