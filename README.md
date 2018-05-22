@@ -14,7 +14,7 @@
 > 因为书籍类小程序需要以企业身份上架，所以没法以小程序二维码的方式体验。
 
 想要体验的直接使用
-```https://github.com/LiangLuDev/WeYue-wxapp.git```
+```git clone https://github.com/LiangLuDev/WeYue-wxapp.git```
 导入到微信开发者工具里面就能直接跑起来。
 
 
